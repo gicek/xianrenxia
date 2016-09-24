@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>MiniGrid</title>
+	<style>
+
+		.card {
+			width: 160px;
+		}
+		/* Anything bellow here isn't necessary, it's only for the demo */
+		.card {
+			background-color: #aaa; 
+		}
+		/* Set some height to cards */
+		.card:nth-child(1) {
+			min-height: 240px; }
+
+		.card:nth-child(2) {
+			min-height: 190px; }
+
+		.card:nth-child(3) {
+			min-height: 210px; }
+
+		.card:nth-child(4) {
+			min-height: 230px; }
+
+		.card:nth-child(5) {
+			min-height: 300px; }
+
+		.card:nth-child(6) {
+			min-height: 200px; }
+		.card:nth-child(7) {
+			min-height: 240px; }
+
+		.card:nth-child(8) {
+			min-height: 190px; }
+
+		.card:nth-child(9) {
+			min-height: 210px; }
+
+		.card:nth-child(10) {
+			min-height: 230px; }
+
+		.card:nth-child(11) {
+			min-height: 180px; }
+
+		.card:nth-child(12) {
+			min-height: 200px; }
+
+		.card {
+			border-radius: 5px;
+			box-shadow: 0 0 5px #555;
+			min-height: 200px; /*			background-image: url('1.png');
+			background-size: 100% auto;
+			background-repeat: no-repeat;*/
+			transition: .5s ease-in-out;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+		body {
+			background-color: #F9F7F7;
+		}
+
+		.cards {
+			width: 80%;
+			margin: 0 auto;
+			font-weight: 2em;
+			font-size: 1.5em;
+		}
+	</style>
+	<script src="jquery.min.js"></script>
+	<script src="minigrid.min.js"></script>
+	<script src="dynamics.min.js"></script>
+</head>
+<body>
+	<div class="cards">
+		<div class="card"><img src="" alt="">I Love You</div>
+		<div class="card"><img src="" alt="">I Love You I Love You I Love You I Love You I Love You I Love You</div>
+		<div class="card"><img src="" alt="">I Love You I Love You</div>
+		<div class="card"><img src="" alt="">I Love You</div>
+		<div class="card"><img src="" alt="">I Love You</div>
+		<div class="card"><img src="" alt="">I Love You</div>
+		<div class="card"><img src="" alt="">I Love You</div>
+		<div class="card"><img src="" alt="">I Love You</div>
+		<div class="card"><img src="" alt="">I Love You</div>
+		<div class="card"><img src="" alt="">I Love You</div>
+		<div class="card"><img src="" alt="">I Love You</div>
+		<div class="card"><img src="" alt="">I Love You</div>
+	</div>
+</body>
+<script>
+	(function(){
+		var grid;
+		function init() {
+			grid = new Minigrid({
+				container: '.cards',
+				item: '.card',
+				gutter: 20, 
+			});
+			grid.mount();
+		}
+
+		  // mount
+		  function update() {
+		  	grid.mount();
+		  }
+
+		  document.addEventListener('DOMContentLoaded', init);
+		  window.addEventListener('resize', update);
+		})();
+
+		$(function(){
+			$('img').attr('src', '1.png');
+		})
+
+	</script>
+	</html>
